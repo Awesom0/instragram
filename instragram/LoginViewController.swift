@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
             if let error = error {
                 print("User log in failed: \(error.localizedDescription)")
                 //display error message
-                let alertController = UIAlertController(title: "Error", message: "Incorrect username or password. Please try again.", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Login Failed!", message: "Incorrect username or password. Please try again.", preferredStyle: .alert)
                 // add an ok button
                 let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
                 }
@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
                 
             } else {
                 print("User logged in successfully")
-                //self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }
     }
@@ -80,7 +80,7 @@ class LoginViewController: UIViewController {
                 print(error.localizedDescription)
                 
                 // display error message
-                let alertController = UIAlertController(title: "Error", message: "Username already exists. Please try a different one.", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Signup Failed!", message: "Username already taken. Please try a different one.", preferredStyle: .alert)
                 // add an ok button
                 let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
                 }

@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Parse
 
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func onLogout(_ sender: Any) {
+        self.performSegue(withIdentifier: "logoutSegue", sender: nil)
     }
     
 

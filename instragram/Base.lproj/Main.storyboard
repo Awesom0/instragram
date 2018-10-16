@@ -54,27 +54,80 @@
                     <connections>
                         <outlet property="passwordField" destination="S8N-LD-bZF" id="Nrv-DT-cLh"/>
                         <outlet property="usernameField" destination="Sge-z4-4pZ" id="c5q-e0-gyA"/>
-                        <segue destination="ymH-FC-Hk2" kind="presentation" identifier="loginSegue" id="rTd-S5-u6o"/>
+                        <segue destination="DKD-0Z-WVh" kind="presentation" identifier="loginSegue" id="lbg-gP-dtT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="4Eg-Vz-1Ju">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="ymH-FC-Hk2" customClass="HomeViewController" customModule="instragram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dYz-Y2-ZTE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8l-T3-ZAC">
+                                <rect key="frame" x="12" y="20" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="ymH-FC-Hk2" eventType="touchUpInside" id="eqL-H7-ZYa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pT9-eg-Z8h"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="feed_tab" id="d6y-Li-26t"/>
+                    <navigationItem key="navigationItem" id="970-QF-0Zf"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="wDz-Oh-zmJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8P-1x-6t4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="134"/>
+            <point key="canvasLocation" x="1873" y="-244"/>
+        </scene>
+        <!--Capture-->
+        <scene sceneID="mSW-vr-7I4">
+            <objects>
+                <viewController id="9rA-Yi-znt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m9P-XO-hfM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RMq-j8-o2k"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Capture" image="insta_camera_btn" id="gBi-gk-8Of"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eIG-7i-Ngo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="562"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="DAj-vQ-1er">
+            <objects>
+                <tabBarController storyboardIdentifier="TabViewController" automaticallyAdjustsScrollViewInsets="NO" id="DKD-0Z-WVh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5df-r9-ns2">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ymH-FC-Hk2" kind="relationship" relationship="viewControllers" id="Lbj-BL-ZSa"/>
+                        <segue destination="9rA-Yi-znt" kind="relationship" relationship="viewControllers" id="7Fb-ox-Ma9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cBz-X2-oCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.6" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="feed_tab" width="25" height="25"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
+    </resources>
 </document>
