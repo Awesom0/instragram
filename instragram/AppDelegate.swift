@@ -24,7 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.clientKey = "ufghfhjgkjhgglhg"
                 configuration.server = "https://mysterious-shore-47945.herokuapp.com/parse"
             })
+            
         )
+        // persist logged in
+        if PFUser.current() != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
+            window?.rootViewController = homeViewController
+        }
         return true
     }
 
